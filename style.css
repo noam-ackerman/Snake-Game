@@ -1,10 +1,12 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  background: url(img/8-bitBackground.png) no-repeat center fixed;
+  background-size: cover;
+}
+
 .container {
-  border: 1px solid black;
   text-align: center;
-  max-width: 600px;
-  padding: 30px;
-  padding-bottom: 80px;
-  margin: 5px auto;
+  margin-top: 35px;
 }
 
 .grid {
@@ -22,10 +24,43 @@
   height: 20px;
 }
 
+h1 {
+  margin-bottom: 15px;
+  color: #c092ff;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+h2 {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.score {
+  font-size: 15px;
+}
+
 .snake {
-  background-color: blue;
+  background-image: url(img/snake.png);
+  background-size: cover;
 }
 
 .apple {
-  background-color: purple;
+  background-image: url(img/heart-8-bit.png);
+  background-size: cover;
+}
+
+.start {
+  font-size: 12px;
+  padding: 8px 10px;
+  font-family: "Press Start 2P", cursive;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border: 2px solid black;
+  color: black;
+  background-color: #fecca0;
+  transition: all 100ms ease-in-out;
+}
+
+.start:hover {
+  background-color: #ffdbbc;
 }

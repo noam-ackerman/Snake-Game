@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSnake = [2, 1, 0];
   let direction = 1;
   let score = 0;
-  let speed = 0.9;
+  let speed = 0.97;
   let intervalTime = 0;
   let interval = 0;
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     direction = 1;
     scoreDisplay.innerHTML = score;
     gameOverNotice.innerHTML = "";
-    intervalTime = 1000;
+    intervalTime = 550;
     currentSnake = [2, 1, 0];
     currentIndex = 0;
     currentSnake.forEach((index) => squares[index].classList.add(`snake`));
