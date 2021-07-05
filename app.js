@@ -1,8 +1,9 @@
 //SELECTORS
 let squares = document.querySelectorAll(`.grid div`);
-let scoreDisplay = document.querySelector(`span`);
+let scoreDisplay = document.querySelector(`.scoreNumber`);
 let startBtn = document.querySelector(".start");
 let gameOverNotice = document.querySelector(`h2`);
+let gameScreen = document.querySelector(`.grid`);
 
 // event listeners
 document.addEventListener(`keyup`, control);
@@ -27,6 +28,7 @@ function startGame() {
   clearInterval(interval);
   score = 0;
   direction = 1;
+  gameScreen.style.background = "transparent";
   scoreDisplay.innerHTML = score;
   gameOverNotice.innerHTML = "";
   intervalTime = 520;
@@ -38,7 +40,7 @@ function startGame() {
 
 //Game Over Notice
 function gameOver() {
-  gameOverNotice.innerHTML = "Game Over!";
+  gameOverNotice.innerHTML = "GAME OVER!";
 }
 
 //movement outcomes  of the snake function
