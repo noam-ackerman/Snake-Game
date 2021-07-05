@@ -1,1 +1,1 @@
-The building of the snake game was guided by tutorial of Ania Kubow
+The building of this game was bulilt with the help of Ania Kubow's tutorial 
