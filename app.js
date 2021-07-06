@@ -16,31 +16,38 @@ let appleIndex = 0;
 let currentSnake = [2, 1, 0];
 let direction = 1;
 let score = 0;
-let speed = 0.97;
+let speed = 0.98;
 let intervalTime = 0;
 let interval = 0;
+let sfx = {
+  eats: new Howl({ src: [`sounds/snake-eats-heart.mp3`] }),
+  die: new Howl({ src: [`sounds/snake-die.mp3`] }),
+};
+let backgroundMusic = {
+  backgroundMusic: new Howl({
+    src: [`sounds/background-music.mp3`],
+    loop: true,
+  }),
+};
 
 //to start and restart
-function startGame() {
+function startGame(event) {
   currentSnake.forEach((index) => squares[index].classList.remove(`snake`));
   squares[appleIndex].classList.remove(`apple`);
   randomApple();
+  backgroundMusic.backgroundMusic.stop();
   clearInterval(interval);
   score = 0;
   direction = 1;
+  backgroundMusic.backgroundMusic.play();
   gameScreen.style.background = "transparent";
   scoreDisplay.innerHTML = score;
   gameOverNotice.innerHTML = "";
-  intervalTime = 450;
+  intervalTime = 350;
   currentSnake = [2, 1, 0];
   currentIndex = 0;
   currentSnake.forEach((index) => squares[index].classList.add(`snake`));
   interval = setInterval(moveOutcome, intervalTime);
-}
-
-//Game Over Notice
-function gameOver() {
-  gameOverNotice.innerHTML = "GAME OVER!";
 }
 
 //movement outcomes  of the snake function
@@ -53,19 +60,22 @@ function moveOutcome() {
     (currentSnake[0] - width < 0 && direction === -width) || // top
     squares[currentSnake[0] + direction].classList.contains(`snake`)
   ) {
-    return [clearInterval(interval), gameOver()];
+    backgroundMusic.backgroundMusic.stop();
+    sfx.die.play();
+    gameOverNotice.innerHTML = "GAME OVER!";
+    return clearInterval(interval);
   }
 
   const tail = currentSnake.pop();
   squares[tail].classList.remove(`snake`);
   currentSnake.unshift(currentSnake[0] + direction);
-  console.log(tail);
 
   //snake getting apple
   if (squares[currentSnake[0]].classList.contains(`apple`)) {
     squares[currentSnake[0]].classList.remove(`apple`);
     squares[tail].classList.add(`snake`);
     currentSnake.push(tail);
+    sfx.eats.play();
     randomApple();
     score++;
     scoreDisplay.innerHTML = score;
@@ -87,8 +97,6 @@ function randomApple() {
 //functions to keycodes
 
 function control(event) {
-  squares[currentIndex].classList.remove(`snake`);
-
   if (event.keyCode === 39) {
     direction = 1; //press the right arrow on our keyboard, the snake will go right one
   } else if (event.keyCode === 38) {
