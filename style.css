@@ -66,12 +66,13 @@ h2 {
 }
 
 .start:hover {
-  background-color: #ffdbbc;
+  background-color: #f5c4ff;
+  cursor: pointer;
 }
 
 .arrowsBtns {
   margin: 0 auto;
-  margin-top: 16px;
+  margin-top: 18px;
   margin-bottom: 50px;
 }
 
@@ -79,10 +80,7 @@ h2 {
 .up,
 .down,
 .right {
-  font-size: 17px;
-  font-weight: bold;
-  padding: 8px 11px;
-  padding-top: 4px;
+  padding: 7px 17px;
   font-family: "Press Start 2P", cursive;
   border: 2px solid black;
   color: black;
@@ -91,11 +89,32 @@ h2 {
   margin: 0 5px;
 }
 
+.left {
+  background: url(img/arrow-left.png) center;
+  background-size: cover;
+}
+
+.up {
+  background: url(img/arrow-up.png) center;
+  background-size: cover;
+}
+
+.right {
+  background: url(img/arrow-right.png) center;
+  background-size: cover;
+}
+
+.down {
+  background: url(img/arrow-down.png) center;
+  background-size: cover;
+}
+
 .left:hover,
 .up:hover,
 .down:hover,
 .right:hover {
-  background-color: #ffdbbc;
+  filter: hue-rotate(-110deg);
+  cursor: pointer;
 }
 
 footer {
