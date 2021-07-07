@@ -20,7 +20,7 @@ right.addEventListener(`click`, turnRight);
 //strings
 let width = 20;
 let currentIndex = 0;
-let appleIndex = 0;
+let heartIndex = 0;
 let currentSnake = [2, 1, 0];
 let direction = 1;
 let score = 0;
@@ -41,8 +41,8 @@ let backgroundMusic = {
 //to start and restart
 function startGame(event) {
   currentSnake.forEach((index) => squares[index].classList.remove(`snake`));
-  squares[appleIndex].classList.remove(`apple`);
-  randomApple();
+  squares[heartIndex].classList.remove(`heart`);
+  randomHeart();
   backgroundMusic.backgroundMusic.stop();
   clearInterval(interval);
   score = 0;
@@ -78,13 +78,13 @@ function moveOutcome() {
   squares[tail].classList.remove(`snake`);
   currentSnake.unshift(currentSnake[0] + direction);
 
-  //snake getting apple
-  if (squares[currentSnake[0]].classList.contains(`apple`)) {
-    squares[currentSnake[0]].classList.remove(`apple`);
+  //snake getting heart
+  if (squares[currentSnake[0]].classList.contains(`heart`)) {
+    squares[currentSnake[0]].classList.remove(`heart`);
     squares[tail].classList.add(`snake`);
     currentSnake.push(tail);
     sfx.eats.play();
-    randomApple();
+    randomHeart();
     score++;
     scoreDisplay.innerHTML = score;
     clearInterval(interval);
@@ -94,12 +94,12 @@ function moveOutcome() {
   squares[currentSnake[0]].classList.add(`snake`);
 }
 
-//generate random apple
-function randomApple() {
+//generate random heart
+function randomHeart() {
   do {
-    appleIndex = Math.floor(Math.random() * squares.length);
-  } while (squares[appleIndex].classList.contains(`snake`));
-  squares[appleIndex].classList.add(`apple`);
+    heartIndex = Math.floor(Math.random() * squares.length);
+  } while (squares[heartIndex].classList.contains(`snake`));
+  squares[heartIndex].classList.add(`heart`);
 }
 
 //functions to turn with keys
