@@ -69,6 +69,21 @@ h2 {
   background-color: #ffdbbc;
 }
 
+.arrowSection {
+  margin: 0 auto;
+  background-color: #c092ff;
+  max-width: 220px;
+  padding: 10px;
+  border: 2.3px solid black;
+  position: relative;
+  top: -4px;
+}
+
+.note {
+  font-size: 9px;
+  margin-bottom: 10px;
+}
+
 .left,
 .up,
 .down,

@@ -8,12 +8,14 @@ let left = document.querySelector(".left");
 let up = document.querySelector(".up");
 let down = document.querySelector(".down");
 let right = document.querySelector(".right");
-let arrowBtns = document.querySelector(".arrowsBtns");
 
 // event listeners
 document.addEventListener(`keyup`, control);
 startBtn.addEventListener(`click`, startGame);
-arrowBtns.addEventListener(`click`, control);
+left.addEventListener(`click`, turnLeft);
+up.addEventListener(`click`, turnUp);
+down.addEventListener(`click`, turnDown);
+right.addEventListener(`click`, turnRight);
 
 //strings
 let width = 20;
@@ -104,12 +106,29 @@ function randomApple() {
 
 function control(e) {
   if (e.keyCode === 39 || e.target === right) {
-    direction = 1; //press the right arrow on our keyboard, the snake will go right one
+    direction = 1; //press the right arrow , the snake will go right
   } else if (e.keyCode === 38 || e.target === up) {
-    direction = -width; //press the up arrow, the snake will go back ten divs, appearing to go up
+    direction = -width; //press the up arrow, the snake will go up
   } else if (e.keyCode === 37 || e.target === left) {
-    direction = -1; //press left, the snake will go left one div
+    direction = -1; //press left, the snake will go left
   } else if (e.keyCode === 40 || e.target === down) {
-    direction = +width; // press down, the snake head will instantly appear in the div ten divs from where you are now
+    direction = +width; // press down, the snake will go down
   }
+}
+// functions to turn with arrow buttons
+
+function turnLeft(e) {
+  direction = -1;
+}
+
+function turnUp(e) {
+  direction = -width;
+}
+
+function turnDown(e) {
+  direction = +width;
+}
+
+function turnRight(e) {
+  direction = 1;
 }
