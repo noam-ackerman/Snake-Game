@@ -68,16 +68,12 @@ h2 {
 .start:hover {
   background-color: #ffdbbc;
 }
-.floated {
-  float: left;
-  margin-right: 5px;
-}
 
 .left,
 .up,
 .down,
 .right {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: bold;
   padding: 6px 11px;
   font-family: "Press Start 2P", cursive;
@@ -85,7 +81,7 @@ h2 {
   color: black;
   background-color: #fecca0;
   transition: all 100ms ease-in-out;
-  margin: 0 auto;
+  margin: 0 5px;
 }
 
 .left:hover,
