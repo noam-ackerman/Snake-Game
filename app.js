@@ -4,10 +4,16 @@ let scoreDisplay = document.querySelector(`.scoreNumber`);
 let startBtn = document.querySelector(".start");
 let gameOverNotice = document.querySelector(`h2`);
 let gameScreen = document.querySelector(`.grid`);
+let left = document.querySelector(".left");
+let up = document.querySelector(".up");
+let down = document.querySelector(".down");
+let right = document.querySelector(".right");
+let arrowBtns = document.querySelector(".arrowsBtns");
 
 // event listeners
 document.addEventListener(`keyup`, control);
 startBtn.addEventListener(`click`, startGame);
+arrowBtns.addEventListener(`click`, control);
 
 //strings
 let width = 20;
@@ -94,16 +100,16 @@ function randomApple() {
   squares[appleIndex].classList.add(`apple`);
 }
 
-//functions to keycodes
+//functions to turn with keys
 
-function control(event) {
-  if (event.keyCode === 39) {
+function control(e) {
+  if (e.keyCode === 39 || e.target === right) {
     direction = 1; //press the right arrow on our keyboard, the snake will go right one
-  } else if (event.keyCode === 38) {
+  } else if (e.keyCode === 38 || e.target === up) {
     direction = -width; //press the up arrow, the snake will go back ten divs, appearing to go up
-  } else if (event.keyCode === 37) {
+  } else if (e.keyCode === 37 || e.target === left) {
     direction = -1; //press left, the snake will go left one div
-  } else if (event.keyCode === 40) {
+  } else if (e.keyCode === 40 || e.target === down) {
     direction = +width; // press down, the snake head will instantly appear in the div ten divs from where you are now
   }
 }
