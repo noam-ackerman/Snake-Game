@@ -51,7 +51,7 @@ function startGame(event) {
   gameScreen.style.background = "transparent";
   scoreDisplay.innerHTML = score;
   gameOverNotice.innerHTML = "";
-  intervalTime = 300;
+  intervalTime = 260;
   currentSnake = [2, 1, 0];
   currentIndex = 0;
   currentSnake.forEach((index) => squares[index].classList.add(`snake`));
@@ -105,30 +105,38 @@ function randomHeart() {
 //functions to turn with keys
 
 function control(e) {
-  if (e.keyCode === 39 || e.target === right) {
+  if (e.keyCode === 39 && direction !== -1) {
     direction = 1; //press the right arrow , the snake will go right
-  } else if (e.keyCode === 38 || e.target === up) {
+  } else if (e.keyCode === 38 && direction !== +width) {
     direction = -width; //press the up arrow, the snake will go up
-  } else if (e.keyCode === 37 || e.target === left) {
+  } else if (e.keyCode === 37 && direction !== 1) {
     direction = -1; //press left, the snake will go left
-  } else if (e.keyCode === 40 || e.target === down) {
+  } else if (e.keyCode === 40 && direction !== -width) {
     direction = +width; // press down, the snake will go down
   }
 }
 // functions to turn with arrow buttons
 
 function turnLeft(e) {
-  direction = -1;
+  if (direction !== 1) {
+    direction = -1; //press the left arrow btn , the snake will go right
+  }
 }
 
 function turnUp(e) {
-  direction = -width;
+  if (direction !== +width) {
+    direction = -width; //press the up arrow btn , the snake will go right
+  }
 }
 
 function turnDown(e) {
-  direction = +width;
+  if (direction !== -width) {
+    direction = +width; //press the down arrow btn , the snake will go right
+  }
 }
 
 function turnRight(e) {
-  direction = 1;
+  if (direction !== -1) {
+    direction = 1; //press the right arrow btn , the snake will go right
+  }
 }
