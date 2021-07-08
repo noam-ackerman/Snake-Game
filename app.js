@@ -24,7 +24,7 @@ let heartIndex = 0;
 let currentSnake = [2, 1, 0];
 let direction = 1;
 let score = 0;
-let speed = 0.98;
+let speed = 0.97;
 let intervalTime = 0;
 let interval = 0;
 let sfx = {
@@ -51,7 +51,7 @@ function startGame(event) {
   gameScreen.style.background = "transparent";
   scoreDisplay.innerHTML = score;
   gameOverNotice.innerHTML = "";
-  intervalTime = 325;
+  intervalTime = 300;
   currentSnake = [2, 1, 0];
   currentIndex = 0;
   currentSnake.forEach((index) => squares[index].classList.add(`snake`));
