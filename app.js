@@ -51,7 +51,7 @@ function startGame(event) {
   gameScreen.style.background = "transparent";
   scoreDisplay.innerHTML = score;
   gameOverNotice.innerHTML = "";
-  intervalTime = 350;
+  intervalTime = 325;
   currentSnake = [2, 1, 0];
   currentIndex = 0;
   currentSnake.forEach((index) => squares[index].classList.add(`snake`));
