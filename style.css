@@ -7,7 +7,7 @@ body {
 .container {
   text-align: center;
   margin-top: 35px;
-  min-height: calc(100vh - 55px);
+  min-height: calc(100vh - 70px);
 }
 
 .grid {
@@ -130,4 +130,46 @@ a {
 
 a:hover {
   color: #c092ff;
+}
+
+@media (max-width: 350px) {
+  .grid {
+    width: 300px;
+    height: 300px;
+  }
+  .grid div {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 400px) {
+  .grid {
+    width: 340px;
+    height: 340px;
+  }
+  .grid div {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .grid {
+    width: 380px;
+    height: 380px;
+  }
+  .grid div {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 25px;
+  }
+  footer {
+    font-size: 5.5px;
+  }
 }
