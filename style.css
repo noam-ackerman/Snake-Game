@@ -7,7 +7,7 @@ body {
 .container {
   text-align: center;
   margin-top: 35px;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 55px);
 }
 
 .grid {
