@@ -72,7 +72,7 @@ h2 {
 
 .arrowsBtns {
   margin: 0 auto;
-  margin-top: 18px;
+  margin-top: 22px;
   margin-bottom: 50px;
 }
 
@@ -80,7 +80,7 @@ h2 {
 .up,
 .down,
 .right {
-  padding: 8px 18px;
+  padding: 13px 23px;
   font-family: "Press Start 2P", cursive;
   border: 2px solid black;
   color: black;
