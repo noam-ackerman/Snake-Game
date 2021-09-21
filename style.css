@@ -141,6 +141,12 @@ a:hover {
     width: 15px;
     height: 15px;
   }
+  .left,
+  .up,
+  .down,
+  .right {
+    padding: 12px 22px;
+  }
 }
 
 @media (min-width: 350px) and (max-width: 400px) {
@@ -152,6 +158,16 @@ a:hover {
     width: 17px;
     height: 17px;
   }
+  .left,
+  .up,
+  .down,
+  .right {
+    padding: 14px 24px;
+  }
+
+  .arrowsBtns {
+    margin-top: 22px;
+  }
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
@@ -162,6 +178,16 @@ a:hover {
   .grid div {
     width: 19px;
     height: 19px;
+  }
+  .left,
+  .up,
+  .down,
+  .right {
+    padding: 14px 24px;
+  }
+
+  .arrowsBtns {
+    margin-top: 22px;
   }
 }
 
