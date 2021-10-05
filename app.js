@@ -103,7 +103,6 @@ function randomHeart() {
 }
 
 //functions to turn with keys
-
 function control(e) {
   if (e.keyCode === 39 && direction !== -1) {
     direction = 1; //press the right arrow , the snake will go right
@@ -116,7 +115,6 @@ function control(e) {
   }
 }
 // functions to turn with arrow buttons
-
 function turnLeft(e) {
   if (direction !== 1) {
     direction = -1; //press the left arrow btn , the snake will go right
